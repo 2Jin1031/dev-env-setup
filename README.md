@@ -44,6 +44,30 @@ codex mcp list             # context7이 보이면 성공
 - 프롬프트에 `use context7`을 붙이면 문서를 찾아본다
 - API 키는 쓰지 않는다 (무료 한도)
 
+## 4. 커밋 전 테스트 훅 깔기
+
+커밋할 때마다 `gradlew test`를 자동으로 돌리고, 실패하면 커밋을 막는 git pre-commit 훅.
+
+```bash
+cd <작업 폴더>                              # git 레포 안
+bash <dev-env-setup 경로>/setup-hooks.sh
+```
+
+- 레포 안(깊이 3까지)의 `gradlew`를 찾아 각각 `test`를 돌린다. 없으면 건너뛴다
+- `~/.jdk-env`가 있으면 먼저 불러온다
+- 기존 pre-commit 훅은 `pre-commit.bak.*`로 백업한다
+- 실패하면 마지막 40줄을 보여 주고 커밋을 막는다
+
+## 5. 작업 지침과 계획 템플릿
+
+```bash
+cp <dev-env-setup 경로>/AGENTS.md ./AGENTS.md
+cp <dev-env-setup 경로>/PLAN-template.md ./PLAN.md
+```
+
+- `AGENTS.md`: Codex가 시작할 때 읽는 작업 지침. 완료 정의, 커밋 규칙, "층위 분리해줘", "리뷰해줘"
+- `PLAN.md`: 합의, 층위, 결정 기록, 확인 기록, 알려진 한계
+
 ## 받아오는 곳
 
 | 무엇 | 어디서 |

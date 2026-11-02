@@ -78,10 +78,12 @@ bash <dev-env-setup 경로>/setup-hooks.sh
 ```bash
 cp <dev-env-setup 경로>/AGENTS.md ./AGENTS.md
 cp <dev-env-setup 경로>/PLAN-template.md ./PLAN.md
+cp <dev-env-setup 경로>/CONDITIONS-template.md ./CONDITIONS.md
 ```
 
 - `AGENTS.md`: Codex가 시작할 때 읽는 작업 지침. 완료 정의, 커밋 규칙, "층위 분리해줘", "리뷰해줘"
-- `PLAN.md`: 합의, 층위, 결정 기록, 확인 기록, 알려진 한계
+- `PLAN.md`: 합의, 층위, 결정 기록, 컴포넌트 책임, AI 제안 기록, 이상 입력 처리, 확인 기록, 알려진 한계
+- `CONDITIONS.md`: 조건표, 데이터 요약, HR 질문 목록. 조건과 HR 답변은 이 파일 하나에만 모은다
 
 ## 받아오는 곳
 

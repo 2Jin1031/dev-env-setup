@@ -44,6 +44,21 @@ codex mcp list             # context7이 보이면 성공
 - 프롬프트에 `use context7`을 붙이면 문서를 찾아본다
 - API 키는 쓰지 않는다 (무료 한도)
 
+### Cofa에서 확인하는 순서
+
+1. 왼쪽 MCP 탭을 먼저 열어 이미 붙어 있는 서버가 있는지 본다
+2. 터미널에서 실행
+
+```bash
+node -v                    # 버전이 안 나와도 스크립트가 원격 주소 방식으로 붙인다
+bash setup-mcp.sh
+codex mcp list             # context7이 보이면 성공
+```
+
+3. Codex를 정상 종료 후 다시 켜고 `/mcp`로 확인
+4. 질문 하나로 동작 확인: `use context7. OR-Tools 문서에서 vehicle routing 예제 찾아줘`
+5. 5분 안에 안 붙으면 MCP 없이 진행한다
+
 ## 4. 커밋 전 테스트 훅 깔기
 
 커밋할 때마다 `gradlew test`를 자동으로 돌리고, 실패하면 커밋을 막는 git pre-commit 훅.
